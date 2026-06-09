@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "295098416932",
+    "project_id": "note-8c055",
+    "storage_bucket": "note-8c055.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295098416932:android:9b862ed45d6f985be53db1",
+        "android_client_info": {
+          "package_name": "com.example.job_rdy_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACnadD9D8fWM3QK4XFEn3V431tR5nJERk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,50 @@
+SafeArea(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextField(
+                  controller: noteController,
+                  decoration: InputDecoration(prefixIcon: Icon(Icons.note_alt_outlined,),enabledBorder: UnderlineInputBorder(),
+                    hint: Text('Write notes',style: TextStyle(fontSize: 20,color: Colors.black38),),
+                  ),
+                ),
+                ElevatedButton(style:loginbt,onPressed: ()async{
+                  final note = noteController.text;
+                  await provider.notesend(note);
+                }, child: Text('Add note',style: heading2,)),
+                SizedBox(height: 10,),
+                // ElevatedButton(onPressed: ()async{
+                //   await provider.fetchnote();
+                // }, child: Text('Get note')),
+                Expanded(
+                  child: ListView.builder(
+                     itemCount: provider.notelist.length,
+                      itemBuilder: (context,index){
+                       final data = provider.notelist[index];
+                       return ListTile(
+                         title: Container(
+                           height: 70,
+                           child: Card(elevation: 7,
+                             child: Padding(
+                               padding: const EdgeInsets.only(top:20,left: 10),
+                               child: Text(data['title']),
+                             ),
+                           ),
+                         ),
+                         trailing: IconButton(onPressed: (){
+                           showDialog(
+                               context: context, builder: (context){
+                                 return editDialog(id: data['id'], title: data['title']);
+                           });
+                         }, icon: Icon(Icons.edit,color: Colors.green,)),
+                       );
+                      }),
+                )
+              ],
+            ),
+          ),
+            ),
+      )
