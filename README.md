@@ -134,8 +134,6 @@ android/app/
 
 ##  Screenshots
 
-Add your application screenshots here.
-
 * Home Screen
 * Add Note
 * Categories
