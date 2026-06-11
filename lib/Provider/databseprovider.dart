@@ -50,4 +50,10 @@ class Databaseprovider extends ChangeNotifier{
       'pinned': pin,
     });
   }
+  Future<void> delete(String id)async{
+    await reference.child(id).remove();
+    notelist.removeWhere((note)=>
+      note['id']==id);
+      notifyListeners();
+  }
 }
